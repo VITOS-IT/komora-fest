@@ -18,7 +18,8 @@ const TheaterForm = ({currentId,setCurrentId})=>{
         director: '',
         synopsis: '',
         info: '',
-        selectedImage:''
+        selectedImage:'',
+        date: new Date()
     };
     const [theaterData, setTheaterData] = useState(state);
     const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const TheaterForm = ({currentId,setCurrentId})=>{
 
     useEffect(()=>{
         if (theater) setTheaterData(theater)
+        console.log(theaterData)
     },[theater])
 
     const handleSubmit = (e)=>{
@@ -34,6 +36,7 @@ const TheaterForm = ({currentId,setCurrentId})=>{
         if (currentId){
             dispatch(updateTheater(currentId, theaterData))
         }else {
+            console.log(theaterData)
             dispatch(createTheater(theaterData))
         }
         clear();
@@ -55,6 +58,10 @@ const TheaterForm = ({currentId,setCurrentId})=>{
                 <TextField name='director' variant="outlined" label='Режисер' fullWidth value={theaterData.director} onChange={(e)=> setTheaterData({...theaterData, director: e.target.value})}/>
                 <TextField name='synopsis' variant="outlined" label='Синопсис' fullWidth value={theaterData.synopsis} onChange={(e)=> setTheaterData({...theaterData, synopsis: e.target.value})}/>
                 <TextField name='info' variant="outlined" label='Інформація про колектив' fullWidth value={theaterData.info} onChange={(e)=> setTheaterData({...theaterData, info: e.target.value})}/>
+
+                <TextField name='date' type="datetime-local" variant="outlined" fullWidth
+                           onChange={(e)=> {setTheaterData({...theaterData, date: e.target.value})}}/>
+
                 <div className={s.fileInput}>
                     <FileBase type='file' multiple={false} onDone={({base64})=>setTheaterData({...theaterData, selectedImage: base64})} />
                 </div>
@@ -65,6 +72,5 @@ const TheaterForm = ({currentId,setCurrentId})=>{
         </Paper>
  )
 }
-
 
 export default TheaterForm

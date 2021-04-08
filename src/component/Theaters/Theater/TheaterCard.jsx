@@ -6,6 +6,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
 import useStyles from './styles';
 import {useDispatch} from "react-redux";
 import {deleteTheater} from "../../../redusers/theaterReducer";
+import {NavLink} from "react-router-dom";
 // import {ThumbUpAltIcon} from '@material-ui/icons'
 const TheaterCard = ({theater, setCurrentId}) => {
     const s = useStyles();
@@ -20,10 +21,11 @@ const TheaterCard = ({theater, setCurrentId}) => {
 
             </div>
             <div className={s.overlay2}>
-
+                <NavLink to={'/theater/' + theater.theaterName}>
                 <Button style={{color: 'red'}} size={"small"} onClick={() => { setCurrentId(theater._id)}}>
                     <MoreHorizIcon fontSize={"default"}/>
                 </Button>
+                </NavLink>
                 <Typography className={s.title} variant={"h6"} gutterBottom>{theater.city}</Typography>
 
             </div>

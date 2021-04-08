@@ -1,0 +1,19 @@
+
+.section{
+    background-color: #DEF6F3;
+    padding-bottom: 30px;
+}
+.wrapper{
+    max-width: 1110px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.wrapper img{
+    margin: 0 2%;
+
+
+}

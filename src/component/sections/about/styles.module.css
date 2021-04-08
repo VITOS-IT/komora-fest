@@ -1,0 +1,15 @@
+.section{
+    background-color: white;
+    padding-bottom: 30px;
+}
+.wrapper{
+    max-width: 1110px;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.aboutText{
+    font-size: 1.25rem;
+}

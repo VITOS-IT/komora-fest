@@ -1,0 +1,33 @@
+.section{
+    background-color: white;
+    padding-bottom: 30px;
+}
+.wrapper{
+    max-width: 1110px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.aboutText{
+    font-size: 1.25rem;
+}
+.contactContent{
+    display: flex;
+    justify-content: space-around;
+}
+
+.contactLocation:hover {
+    transform: translateY(-0.5%);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+.contactItem{
+    width: 40%;
+}
+.contactItem p{
+    text-align: left;
+    font-size: large;
+}

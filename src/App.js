@@ -1,12 +1,19 @@
 import './App.css';
-import TheaterForm from "./forms/TheaterForm";
-import {Container, AppBar, Typography, Grow, Grid} from "@material-ui/core";
 import theaterLogo from './img/theatre-mask.jpg'
+import ss from './App.module.css'
 import Theaters from "./component/Theaters/Theaters";
 import useStyles from './styles'
 import {useDispatch} from "react-redux";
 import React, {useEffect, useState} from "react";
 import {getTheaters} from "./redusers/theaterReducer";
+import Navbar from "./component/navbar/Navbar";
+import {Route} from "react-router-dom";
+import TheaterBlock from "./component/Theaters/theaterBlock/TheaterBlock";
+import AboutSection from "./component/sections/about/aboutSection";
+import Sponsors from "./component/sections/sponsors/Sponsors";
+import Contacts from "./component/sections/contacts/Contacts";
+import Tabs from "./component/festProgram/FestProgram";
+import Activities from "./component/sections/activities/Activities";
 
 
 function App() {
@@ -14,28 +21,30 @@ function App() {
     const dispatch = useDispatch();
     const [currentId, setCurrentId] = useState(null)
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getTheaters());
-    },[dispatch, currentId])
+    }, [dispatch, currentId])
     return (
-        <Container maxWidth={"lg"}>
-            <AppBar className={s.appBar} position={"static"} color={"inherit"}>
-                <Typography className={s.heading} variant={'h2'} align={"center"}>Theaters</Typography>
-                <img className={s.image} src={theaterLogo} alt={'logo'} height={'60px'}/>
-            </AppBar>
-            <Grow in>
-                <Container>
-                    <Grid container justify={"space-between"} alignItems={"stretch"} spacing={3}>
-                        <Grid item xs={12} sm={7}>
-                            <Theaters setCurrentId={setCurrentId} />
-                        </Grid>
-                        <Grid item xs={12} sm={5}>
-                            <TheaterForm currentId ={currentId} setCurrentId={setCurrentId} />
-                        </Grid>
-                    </Grid>
-                </Container>
-            </Grow>
-        </Container>
+        <>
+            <Navbar/>
+            <Route exact path="/">
+
+                <AboutSection/>
+                 <Tabs/>
+                <Activities/>
+            </Route>
+            <Route path="/theaters">
+                <Theaters setCurrentId={setCurrentId}/>
+            </Route>
+            <Route path="/theater/:id?"> \
+                <TheaterBlock currentId={currentId} setCurrentId={setCurrentId}/>
+            </Route>
+
+
+            <Sponsors/>
+            <Contacts/>
+        </>
+
 
     );
 }

@@ -3,6 +3,7 @@ import axios from "axios";
 const url = 'http://localhost:5000/theaters';
 
 export const fetchTheater = () => axios.get(url)
+export const getTheater = (id) => axios.get(`${url}/${id}`)
 export const createTheater = (newTheater) =>{
     axios.post(url, newTheater)
 }

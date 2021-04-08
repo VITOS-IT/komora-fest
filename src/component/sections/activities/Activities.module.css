@@ -1,0 +1,73 @@
+.section{
+
+    background-color: white;
+}
+.wrapper{
+    max-width: 1110px;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.aboutText{
+    font-size: 1.25rem;
+}
+
+.grid {
+
+    display: flex;
+    width: 100%;
+    grid-gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    align-items: start;
+    padding-bottom: 3rem;
+}
+
+.gridItem {
+    background-color: #fff;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+    height: 35rem;
+    width: 33%;
+}
+
+.gridItem:hover {
+    transform: translateY(-0.5%);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
+    cursor: auto;
+}
+
+.cardImg {
+    display: block;
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+}
+
+.cardContent {
+    padding: 0 3rem 3rem 3rem;
+}
+
+.cardHeader {
+    margin: 30px auto;
+    font-size: 2rem;
+}
+
+.cardText {
+    letter-spacing: 0.05rem;
+    text-align: left;
+    /*line-height: 1.7;*/
+    /*margin-bottom: 2.5rem;*/
+}
+
+
+@media only screen and (max-width: 60em) {
+
+    .grid {
+        grid-gap: 3rem;
+    }
+}
