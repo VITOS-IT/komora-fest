@@ -1,4 +1,6 @@
-
+menu{
+    padding: 0;
+}
 .tabs {
     margin: 15px auto;
     width: 1100px;
@@ -10,12 +12,12 @@
 
 .tab {
     padding: 15px;
-    background-color: #00BDA4;
+    background-color: #A38E80;
     border-radius: 5px;
     border: 1px rgba(255, 255, 255, .15) solid;
     box-shadow: 0 3px 10px rgba(255, 255, 255, .1);
     /* border-bottom: 5px rgba(255,255,255,.1) solid; */
-    color: rgba(255, 255, 255, 0.5);
+    color: #2E2237;
     width: 15%;
     float: left;
     margin-left: 15px;
@@ -24,6 +26,9 @@
     top: 0;
 }
 
+.head_name{
+    color: #E0E8F1;
+}
 .tab:first-child {
     margin-left: 0;
 }
@@ -33,7 +38,7 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, .5);
     top: -3px;
     border: 1px rgba(255, 255, 255, .3) solid;
-    color: rgba(255, 255, 255, 0.8);
+    color: #E0E8F1;
     /* border-bottom: 5px rgba(255,255,255,.3) solid; */
 }
 
@@ -42,7 +47,7 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, .5);
     border: 1px rgba(0, 0, 0, .4) solid;
     top: -3px;
-    color: rgba(0, 0, 0, 1);
+    color: #2E2237;
 }
 
 .progSection {
@@ -50,7 +55,7 @@
     padding-top: 30px;
     padding-bottom: 30px;
     width: 100%;
-    background-color: #DEF6F3;
+    background-color: #2E2237;
 
 }
 .tabs menu ul {
@@ -66,5 +71,5 @@
     padding: 15px 0;
     /*color: white;*/
     line-height: 1.5;
-    color: #7A8A9E;
+    color: #E0E8F1;
 }

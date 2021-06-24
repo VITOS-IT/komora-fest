@@ -1,0 +1,11 @@
+.about_block{
+    text-align: left;
+    margin-left: 50px;
+}
+.theater{
+    display: flex;
+    justify-content: space-around;
+}
+.theater_img{
+    width: 40%;
+}

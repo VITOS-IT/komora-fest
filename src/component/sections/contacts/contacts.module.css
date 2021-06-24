@@ -1,5 +1,5 @@
 .section{
-    background-color: white;
+    background-color: #2E2237;
     padding-bottom: 30px;
 }
 .wrapper{
@@ -14,9 +14,13 @@
 .aboutText{
     font-size: 1.25rem;
 }
+.contact_name{
+    color: #E0E8F1;
+}
 .contactContent{
     display: flex;
     justify-content: space-around;
+    color: #E0E8F1;
 }
 
 .contactLocation:hover {

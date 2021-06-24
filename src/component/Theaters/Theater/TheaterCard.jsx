@@ -1,46 +1,44 @@
 import React from "react";
-
-import {Card, CardActions, CardContent, CardMedia, Button, Typography} from "@material-ui/core";
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUp';
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
-import useStyles from './styles';
+import s from './TheaterCard.module.css';
 import {useDispatch} from "react-redux";
-import {deleteTheater} from "../../../redusers/theaterReducer";
 import {NavLink} from "react-router-dom";
-// import {ThumbUpAltIcon} from '@material-ui/icons'
+import performanceImage from "../../../img/performance.jpg";
+import background from '../../../img/DSC_0504-min.JPG'
+import {deleteTheater} from "../../../redusers/theaterReducer";
+
+
+
 const TheaterCard = ({theater, setCurrentId}) => {
-    const s = useStyles();
 
     const dispatch = useDispatch();
 
     return (
-        <Card className={s.card}>
-            <CardMedia className={s.media} image={theater.selectedImage} title={theater.theaterName}/>
-            <div className={s.overlay}>
-                <Typography className={s.title} variant={"h5"} gutterBottom>{theater.theaterName}</Typography>
-
+        <>
+            <div className={s.gridItem}>
+                <div className={s.card_top} style={{
+                    backgroundImage: `url(${theater.selectedImage || background})`
+                }}>
+                    <div className={s.theater_name}>
+                        Театр: {theater.theaterName}
+                    </div>
+                    <div className={s.theater_sity}>
+                        м. {theater.city}
+                    </div>
+                </div>
+                <div className={s.card_bottom}>
+                    <div className={s.performance}>
+                        {theater.performanceName}
+                    </div>
+                    <span>{theater.genre}, {theater.synopsis}</span>
+                    <div className={s.director}>
+                        Режисер: {theater.director}
+                    </div>
+                </div>
+                <NavLink to={`/theaters/${theater.theaterName}`} onClick={() => {setCurrentId(theater._id)}} >
+                    <button>Детально</button></NavLink>
+                {/*<button onClick={()=>{dispatch(deleteTheater(theater._id))}}>Delete</button>*/}
             </div>
-            <div className={s.overlay2}>
-                <NavLink to={'/theater/' + theater.theaterName}>
-                <Button style={{color: 'red'}} size={"small"} onClick={() => { setCurrentId(theater._id)}}>
-                    <MoreHorizIcon fontSize={"default"}/>
-                </Button>
-                </NavLink>
-                <Typography className={s.title} variant={"h6"} gutterBottom>{theater.city}</Typography>
-
-            </div>
-
-            <div className={s.details}>
-                <Typography variant={"h6"}>Вистава: {theater.performanceName}</Typography>
-                <Typography variant={"body2"} color={"textSecondary"}>{theater.genre}</Typography>
-            </div>
-            <CardContent>
-                <Typography variant={"h6"}>{theater.director}</Typography>
-            </CardContent>
-            <CardActions className={s.cardActions}>
-                <Button size={"small"} color={"primary"} onClick={() => { dispatch(deleteTheater(theater._id))}}>delete</Button>
-            </CardActions>
-        </Card>
+        </>
     )
 }
 

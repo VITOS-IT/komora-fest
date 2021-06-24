@@ -3,15 +3,21 @@ import s from './styles.module.css'
 import React from "react";
 import {NavLink} from "react-router-dom";
 import cn from 'classnames'
+import {login, logout} from "../../redusers/authReducer";
+import {useDispatch, useSelector} from "react-redux";
 
 
-const Navbar = () => {
+const Navbar = ({isAuth}) => {
+    const dispatch = useDispatch();
+    // const isAuth = useSelector((state)=>state.authReducer.isAuth)
 
     return (
         <>
             <header>
                 <div className={s.wrapper}>
                     <NavLink to={'/'} className={s.logo}>KOMORA</NavLink>
+
+
                     <nav>
                         <ul className={s.nav}>
                             <li><NavLink to={'/theaters'} activeClassName={s.active}>УЧАСНИКИ</NavLink></li>
@@ -19,7 +25,9 @@ const Navbar = () => {
                             <li><NavLink to={'/'} activeClassName={s.active}>ПРО НАС</NavLink></li>
                         </ul>
                     </nav>
-                    <button>Log in</button>
+                    {isAuth ? <button onClick={()=>{dispatch(logout())}}>Logout</button>:
+                        <button onClick={()=>{dispatch(login('email', 'password'))}}>Log in</button>}
+
                 </div>
             </header>
             <section className={s.banner}>

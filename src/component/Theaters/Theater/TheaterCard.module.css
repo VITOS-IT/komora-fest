@@ -1,0 +1,91 @@
+.gridItem {
+    font-size: 18px;
+    background-color: #E0E8F1;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+    /*height: 35rem;*/
+    width: 30%;
+    text-align: left;
+
+}
+
+.gridItem:hover {
+    transform: translateY(-0.5%);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
+    cursor: auto;
+}
+
+/*.card{*/
+/*    !*width: 30%;*!*/
+/*    max-width: 300px;*/
+/*    margin: 30px;*/
+/*    !* background-color: aqua; *!*/
+/*    font-size: 18px;*/
+/*    border-radius: 20px;*/
+/*    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);*/
+/*}*/
+.card_top{
+    padding: 10px;
+    background: no-repeat;
+    border-radius: 0.4rem 0.4rem 0 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode:darken;
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    resize: both;
+    color: #E0E8F1;
+    justify-content: space-between;
+    position: relative;
+
+}
+.theater_name{
+    margin: 10px;
+}
+.theater_sity{
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+}
+
+.card_bottom{
+    padding: 10px;
+    background-color: #E0E8F1;
+    border-radius: 0 0 0.4rem 0.4rem;
+    height: 200px;
+    color: #2E2237;
+    justify-content: space-between;
+    position: relative;
+
+}
+.performance{
+    margin: 10px;
+    font-size: 18px;
+}
+.card_bottom span{
+    margin-left: 10px;
+    font-size: 14px;
+    color: #A38E80;
+}
+.director{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.gridItem button{
+    width: 100%;
+    border-radius: 0 0 0.4rem 0.4rem;
+    cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 60em) {
+
+    .grid {
+        grid-gap: 3rem;
+    }
+}

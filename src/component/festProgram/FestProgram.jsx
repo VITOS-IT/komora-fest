@@ -8,7 +8,6 @@ const TAB_DATA = [18, 19, 20, 21];
 
 const Tabs = () => {
     const theaters = useSelector((state)=>state.theaterReducer)
-    debugger
     let initialState = theaters.map(t => ({...t, date : new Date( Date.parse(t.date))}))
     initialState.sort(function(a,b){
         return new Date(a.date) - new Date(b.date);
@@ -26,7 +25,7 @@ const Tabs = () => {
     return (
         <section className={s.progSection}>
             <div className={s.tabs}>
-                <h2>Програма фестивалю</h2>
+                <h2 className={s.head_name}>Програма фестивалю</h2>
                 <menu >
                     <ul>
                         {TAB_DATA.map((label, i) => {

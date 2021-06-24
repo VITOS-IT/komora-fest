@@ -6,7 +6,7 @@ const Contacts = () => {
     return (
         <section className={s.section}>
             <div className={s.wrapper}>
-                <h2>Контакти</h2>
+                <h2 className={s.contact_name}>Контакти</h2>
                 <div className={s.contactContent}>
                     <div className={s.contactItem}>
                         <iframe className={s.contactLocation}

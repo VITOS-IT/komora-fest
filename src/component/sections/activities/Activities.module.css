@@ -1,6 +1,6 @@
 .section{
 
-    background-color: white;
+    background-color: #E0E8F1;
 }
 .wrapper{
     max-width: 1110px;
@@ -25,7 +25,7 @@
 }
 
 .gridItem {
-    background-color: #fff;
+    background-color: #E0E8F1;
     border-radius: 0.4rem;
     overflow: hidden;
     box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
